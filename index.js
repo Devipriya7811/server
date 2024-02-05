@@ -6,10 +6,10 @@ const cors = require('cors')
 const multer = require('multer')
 const path = require('path')
 const cookieParser = require('cookie-parser')
-const authRoute = require('../server/routes/auth')
-const ownRoute = require('./routes/own')
-const postRoute = require('./routes/posts')
-const commentRoute = require('./routes/comments')
+const authRoute = require('./routes/auth.js')
+const ownRoute = require('./routes/own.js')
+const postRoute = require('./routes/posts.js')
+const commentRoute = require('./routes/comments.js')
 
 
 
