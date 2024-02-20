@@ -6,10 +6,10 @@ const cors = require("cors");
 const multer = require("multer");
 const path = require("path");
 const cookieParser = require("cookie-parser");
-const authRoute = require("../server/routes/auth");
-const ownRoute = require("./routes/own");
-const postRoute = require("./routes/posts");
-const commentRoute = require("./routes/comments");
+const authRoute = require("./routes/auth.js");
+const ownRoute = require("./routes/own.js");
+const postRoute = require("./routes/posts.js");
+const commentRoute = require("./routes/comments.js");
 
 //database
 const connectDB = async () => {
@@ -25,7 +25,13 @@ const connectDB = async () => {
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
-app.use(cors());
+// Allow requests from http://localhost:5173
+app.use(
+  cors({
+    origin: "https://glistening-wisp-64952b.netlify.app/",
+    credentials: true, // Include credentials in CORS request
+  })
+);
 app.use(cookieParser());
 app.use("/api/auth", authRoute);
 app.use("/api/own", ownRoute);
