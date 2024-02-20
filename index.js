@@ -29,8 +29,8 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
 app.use(
   cors({
     origin: "https://glistening-wisp-64952b.netlify.app/",
-    credentials: true, // Include credentials in CORS request
-  })
+    credentials: true, // Include credentials in CORS request
+  })
 );
 app.use(cookieParser());
 app.use("/api/auth", authRoute);
