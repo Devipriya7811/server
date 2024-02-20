@@ -28,7 +28,7 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
 // Allow requests from http://localhost:5173
 app.use(
   cors({
-    origin: "https://glistening-wisp-64952b.netlify.app/",
+    origin: "https://glistening-wisp-64952b.netlify.app",
     credentials: true,
   })
 );
